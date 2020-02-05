@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Object Oriented Programming</title>
+    <title>My Pets</title>
 </head>
 <body>
-    <h1>Welcome to OOP practice</h1>
+    <h1>My Pets</h1>
+    {{ @pet1->eat() }}
+    {{ @pet2->talk() }}
+    <p>My pet's name is {{ @pet2->getName() }} and it is {{ @pet2->getColor() }}</p>
+    {{ @dog1->fetch() }}
+    {{ @dog1->talk() }}
 </body>
 </html>

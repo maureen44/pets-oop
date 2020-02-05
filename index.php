@@ -10,17 +10,25 @@ require ("vendor/autoload.php");
 $f3 = Base::instance();
 
 //define default route
-$f3->route('GET /', function () {
+$f3->route('GET /', function ($f3) {
 
     $pet1 = new Pet("Mango", "Gold");
-    $pet1->eat();
-
     $pet2 = new Pet();
+    $pet2->setName("Liby");
 
-    //Call the talk method
-    $pet1->talk();
-    /*$view = new Template();
-    echo $view->render('views/my-pets.html');*/
+    $pet2->setColor("white");
+    //var_dump($pet1);
+    $dog1 = new Dog("Podi", "gray");
+
+
+    $f3->set('pet1', $pet1);
+    $f3->set('pet2', $pet2);
+    $f3->set('dog1', $dog1);
+
+
+
+    $view = new Template();
+    echo $view->render('views/my-pets.html');
 
 });
 
